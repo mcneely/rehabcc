@@ -1,0 +1,61 @@
+version: '3'
+services:
+    apache:
+        build: .docker/apache
+        container_name: apache
+        ports:
+            - 80:80
+        volumes:
+            - .docker/config/vhosts:/etc/apache2/sites-enabled
+            - .:/var/www/
+            - .docker/data/log:/var/log
+        env_file:
+            - .env
+        depends_on:
+            - php-fpm
+        networks:
+            - app
+
+    database:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password --disable-log-bin
+        restart: always
+        container_name: mysql
+        volumes:
+            - .docker/data/mysql:/var/lib/mysql
+            - .docker/data/log:/var/log
+        env_file:
+            - .env
+        ports:
+            - 3306:3306
+        networks:
+            - app
+
+    php-fpm:
+        build: .docker/php/fpm
+        container_name: php-fpm
+        volumes:
+            - .:/var/www
+            - .docker/data/log:/var/log
+        env_file:
+            - .env
+        depends_on:
+            - php-cli
+            - database
+        networks:
+            - app
+
+    php-cli:
+        build: .docker/php/cli
+        container_name: php-cli
+        volumes:
+            - .:/var/www
+            - .docker/data/log:/var/log
+        env_file:
+            - .env
+        depends_on:
+            - database
+        networks:
+            - app
+networks:
+    app:
