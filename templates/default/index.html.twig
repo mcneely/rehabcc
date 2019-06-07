@@ -1,20 +1,9 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello DefaultController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Welcome!</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <a href="{{ path('hospital_list') }}"><strong>Click here to see the Hospital List.</strong></a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/mcneely/projects/personal/rehabcc/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/mcneely/projects/personal/rehabcc/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pretium lectus quam id leo. Ac felis donec et odio. Nunc sed blandit libero volutpat sed cras ornare arcu dui. Faucibus in ornare quam viverra. Quisque egestas diam in arcu cursus euismod. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Eget sit amet tellus cras adipiscing enim eu. Nunc congue nisi vitae suscipit tellus. Nibh ipsum consequat nisl vel pretium lectus quam id.</p>
+    <p>Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Lectus arcu bibendum at varius. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Neque sodales ut etiam sit amet nisl purus in mollis. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. In dictum non consectetur a erat nam. Commodo elit at imperdiet dui accumsan sit amet nulla. Vehicula ipsum a arcu cursus vitae congue. Malesuada fames ac turpis egestas maecenas pharetra. Facilisis sed odio morbi quis commodo odio aenean sed. Ante in nibh mauris cursus mattis molestie a iaculis at. Nibh nisl condimentum id venenatis a condimentum vitae.</p>
 {% endblock %}

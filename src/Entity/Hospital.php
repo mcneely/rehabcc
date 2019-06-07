@@ -29,7 +29,7 @@ class Hospital
     private $Phone;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="Hospitals")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="Hospitals",cascade={"all"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $Address;

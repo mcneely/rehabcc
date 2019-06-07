@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% import "macros.html.twig" as macro %}
+{% block body %}
+    <h1>List Of Hospitals</h1>
+    {{ macro.hospitalList(hospitals) }}
+{% endblock %}

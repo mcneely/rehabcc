@@ -1,0 +1,31 @@
+{% macro hospitalList(hospitals, showAdmin=false) %}
+    <style>
+        .row {
+            width: fit-content;
+        }
+        .row div {
+            padding: 2px;
+            margin: 0;
+        }
+
+        .row div {
+            display: inline-block;
+            clear: none;
+        }
+
+    </style>
+    <ul>
+    {% for hospital in hospitals %}
+        <li class="row">
+            <div><a href="{{ path('hospital_view', {"id": hospital.id}) }}">{{ hospital.name }}</a></div>
+            {% if (showAdmin) %}
+                <div><a href="{{ path('update_hospital', {"id": hospital.id}) }}">Update</a></div>
+                <div><a href="{{ path('delete_hospital', {"id": hospital.id}) }}">Delete</a></div>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul><br>
+    {% if (showAdmin) %}
+    <a href="{{ path('create_hospital')}}">Create Hospital</a>
+    {% endif %}
+{%  endmacro %}

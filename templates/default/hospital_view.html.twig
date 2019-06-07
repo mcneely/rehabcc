@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% import "macros.html.twig" as macro %}
+{% block body %}
+    {% if(message is not empty) %}
+    <h2 style="color: red">{{ message }}</h2>
+    {% endif %}
+    <h1>{{ hospital.name }}</h1>
+    <h2>Phone: {{ hospital.phone }}</h2>
+    <h3>Address:</h3>
+    <address>
+        {{ hospital.address.street }}<br>
+        {{ hospital.address.city }}, {{ hospital.address.state }} {{ hospital.address.zip }}
+    </address>
+    <h2>Send Us A Message</h2>
+    <div>
+    {{ form(form) }}
+    </div>
+{% endblock %}
