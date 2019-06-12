@@ -67,6 +67,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "test": [
+            "export SYMFONY_PHPUNIT_VERSION=8",
+            "simple-phpunit"
         ]
     },
     "conflict": {

@@ -20,9 +20,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return [
-            'controller_name' => 'DefaultController',
-        ];
+        return [];
     }
 
     /**
